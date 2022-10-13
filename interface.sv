@@ -15,7 +15,7 @@ class Item extends uvm_sequence_item;
 	rand bit in;
 	bit out;
 
-	function new(string name = "item ")
+	function new(string name = "Item ")
 		super.new(name);
 	endfunction
 //a

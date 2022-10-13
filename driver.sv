@@ -9,7 +9,7 @@
  
   virtual function void build_phase (uvm_phase phase);
          super.build_phase(phase);
-         if (! uvm_config_db #(virtual dut_if)::get(this,"","dut_if",vif))begin                 
+         if (! uvm_config_db #(virtual dut_if)::get(this,"","dut_if",vif))               
 		`uvm_fatal("Error no se encontro dut_if")
 
  endfunction
