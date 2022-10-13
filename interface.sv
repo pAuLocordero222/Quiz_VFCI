@@ -10,8 +10,8 @@ interface dut_if(input bit clk);
 	endclocking	
 endinterface
 
-class item extends uvm_sequence_item;
-	`uvm_object_utils(item)
+class Item extends uvm_sequence_item;
+	`uvm_object_utils(Item)
 	rand bit in;
 	bit out;
 
