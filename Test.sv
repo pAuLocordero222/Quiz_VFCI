@@ -14,5 +14,11 @@ class test extends uvm_test;
         e0= env::type_id::create("e0", this);
 
         if (!uvm_config_db#db(virtual dut_if)::get(this,"", "dut_if", vif))
+            'uvm_fatal("test", "Did not get vif")
+        uvm_config_db#(virtual dut_if)::set(this, "e0.age.*","dut_if", vif)
+        uvm_config_db#(bit[3:0])::set(this, "*", "ref_pattern", patt);
+
+        seq=my_sequence::type_id::create("seq");
+        seq.randomize
     endfunction
 
