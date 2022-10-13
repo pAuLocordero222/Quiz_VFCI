@@ -22,3 +22,19 @@ class test extends uvm_test;
         seq.randomize
     endfunction
 
+    virtual task run_phase(uvm_phase phase);
+        phase.raise_objection(this);
+        apply_reset();
+        seq.start(e0.age.sco);
+        #200
+        phase.drop_objection(this);
+    endtask
+
+    virtual task reset();
+        vif.reset<=0;
+        vif.in<=0;
+        repeat(5)@(posedge vif.clk);
+        vif.rese<=1;
+        repeat(10)@(posedge vif.clk)
+    endtask
+endclass
