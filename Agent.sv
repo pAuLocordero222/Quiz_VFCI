@@ -26,3 +26,5 @@ class agent extends uvm_agent;
         dri.seq_item_port.connect(seq.seq_item_export);
 
     endfunction
+
+endclass
