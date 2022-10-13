@@ -15,7 +15,11 @@ class Item extends uvm_sequence_item;
 	rand bit in;
 	bit out;
 
-	function new(string name = "Item ")
+	virtual function string convert2str();
+		return $sformatf("in=%0d, out=%0d", in, out );
+	endfunction
+
+	function new(string name = "Item ");
 		super.new(name);
 	endfunction
 //a

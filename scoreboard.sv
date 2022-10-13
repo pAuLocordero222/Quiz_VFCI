@@ -1,5 +1,5 @@
 class my_scoreboard extends uvm_scoreboard;
-	`uvm_utils
+	`uvm_component_utils(my_scoreboard)
 
 	bit[3:0] ref_pattern;
 	bit[3:0] act_pattern;
@@ -11,11 +11,11 @@ class my_scoreboard extends uvm_scoreboard;
 	endfunction
 
 
-	uvm_analysis_imp #(Item, my_scoreboard) item_export;
+	uvm_analysis_imp #(Item, my_scoreboard) m_analysis_imp;
 
 	virtual function void build_phase(uvm_phase phase);
 		super.build_phase(phase);
-		item_export=new ("item_export", this);
+		m_analysis_imp=new ("m_analysis_imp", this);
 		if (!uvm_config_db#(bit[3:0])::get(this,"*", "ref_pattern", ref_pattern))
 			`uvm_fatal("SCBD", "Did not get ref_pattern !")
 	endfunction
@@ -31,11 +31,11 @@ class my_scoreboard extends uvm_scoreboard;
 		end 
 		
 		else begin
-			`uvm_info("SCBD", $sformatf("PASS ! out=%0d exp=%0d", item.out, expt_out), UVM_HIGH)
+			`uvm_info("SCBD", $sformatf("PASS ! out=%0d exp=%0d", item.out, exp_out), UVM_HIGH)
 		end 
 
 		if (!(ref_pattern ^ act_pattern))begin
-			`uvm_info("SCBD", $sformatf("Pattern found to match, next out should be 1")UVM_LOW)
+			`uvm_info("SCBD", $sformatf("Pattern found to match, next out should be 1"),UVM_LOW)
 			exp_out=1;
 		end 
 		

@@ -1,14 +1,14 @@
 `include "uvm_macros.svh"
 import uvm_pkg::*;
 `include "dut.sv"
-`include "driver.sv"
 `include "interface.sv"
+`include "driver.sv"
 `include "monitor.sv"
 `include "scoreboard.sv"
 `include "Agent.sv"
 `include "sequence.sv"
-`include "environment"
-`include "test.sv"
+`include "environment.sv"
+`include "Test.sv"
 
 module testbench;
     reg clk;
