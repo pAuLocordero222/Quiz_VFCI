@@ -24,7 +24,7 @@ class my_scoreboard extends uvm_scoreboard;
 
 	virtual function write (Item item);
 		act_pattern=act_pattern <<1 | item.in;
-		`uvm_info("SCBD", $sformatf("in=%0d out=%0d ref=0b%0b act=0b%0b", item.in, item.out, ref_pattern, act_pattern, act_pattern), UVM_LOW)
+		`uvm_info("SCBD", $sformatf("in=%0d out=%0d ref=0b%0b act=0b%0b", item.in, item.out, ref_pattern, act_pattern), UVM_LOW)
 
 		if(item.out !=exp_out) begin
 			`uvm_error("SCBD", $sformatf("ERROR ! out=%0d exp=%0d", item.out, exp_out))

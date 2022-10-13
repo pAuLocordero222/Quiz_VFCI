@@ -8,7 +8,7 @@ class my_monitor extends uvm_monitor;
 	virtual dut_if vif;
 	uvm_analysis_port #(Item) mon_analysis_port;
 
-	virtual function void build (uvm_phase phase);
+	virtual function void build_phase (uvm_phase phase);
 		super.build_phase (phase);
 
 		mon_analysis_port = new("mon_analysis_port", this);
