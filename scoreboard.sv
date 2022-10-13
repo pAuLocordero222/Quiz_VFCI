@@ -24,7 +24,25 @@ class my_scoreboard extends uvm_scoreboard;
 
 	virtual function write (Item item);
 		act_pattern=act_pattern <<1 | item.in;
-		`uvm_info("write", $sformat("Data received = 0x%0h", data), UVM_MEDIUM)
+		`uvm_info("SCBD", $sformatf("in=%0d out=%0d ref=0b%0b act=0b%0b", item.in, item.out, ref_pattern, act_pattern, act_pattern), UVM_LOW)
+
+		if(item.out !=exp_out) begin
+			`uvm_error("SCBD", $sformatf("ERROR ! out=%0d exp=%0d", item.out, exp_out))
+		end 
+		
+		else begin
+			`uvm_info("SCBD", $sformatf("PASS ! out=%0d exp=%0d", item.out, expt_out), UVM_HIGH)
+		end 
+
+		if (!(ref_pattern ^ act_pattern))begin
+			`uvm_info("SCBD", $sformatf("Pattern found to match, next out should be 1")UVM_LOW)
+			exp_out=1;
+		end 
+		
+		else begin
+			exp_out=0;
+		end
+
 	endfunction
 
 endclass
