@@ -17,7 +17,7 @@
 	 virtual task run_phase(uvm_phase phase);
 		super.run_phase(phase);
 		forever begin
-			item m_item;
+			Item m_item;
 			`uvm_info("DRV", $sformatf("wait for item from sequencer"), UVM_HIGH);
 			seq_item_port.get_next_item(m_item);
 			drive_item(m_item);

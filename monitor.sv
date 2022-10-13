@@ -6,7 +6,7 @@ class my_monitor extends uvm_monitor;
 	endfunction
 	
 	virtual dut_if vif;
-	`uvm_analysis_port #(item) mon_analysis_port;
+	`uvm_analysis_port #(Item) mon_analysis_port;
 
 	virtual function void build (uvm_phase phase);
 		super.build_phase (phase);
@@ -23,7 +23,7 @@ class my_monitor extends uvm_monitor;
 		forever begin
 			@(vif.cb);
 				if(vif.reset) begin
-					item item = item::type_id::create("item");
+					Item item = Item::type_id::create("item");
 					item.in = vif.in;
 					item.out = vif.cb.out;
 					mon_analysis_port.write(item);
