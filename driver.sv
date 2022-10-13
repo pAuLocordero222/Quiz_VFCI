@@ -1,4 +1,4 @@
- class my_driver extends uvm_driver; 
+ class my_driver extends uvm_driver#(Item); 
  `uvm_component_utils(my_driver)
  
  function new(string name="my driver", uvm_component parent=null);
