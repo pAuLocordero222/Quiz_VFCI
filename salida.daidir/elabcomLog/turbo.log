@@ -1,0 +1,5 @@
+Command Line: /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/bin/elabcom -logdir /home/PABLO_CORDERO/Desktop/Practica_UVM/Quiz_VFCI/salida.daidir/elabcomLog -simvdaidir /home/PABLO_CORDERO/Desktop/Practica_UVM/Quiz_VFCI/salida.daidir -lib /home/PABLO_CORDERO/Desktop/Practica_UVM/Quiz_VFCI/salida.daidir/work -saveLevel -elab /home/PABLO_CORDERO/Desktop/Practica_UVM/Quiz_VFCI/salida.daidir/kdb -simflow -simdir /home/PABLO_CORDERO/Desktop/Practica_UVM/Quiz_VFCI/salida.daidir/kdb_libs -topfile /home/PABLO_CORDERO/Desktop/Practica_UVM/Quiz_VFCI/salida.daidir/.elabcomTopFile -pkgfile /home/PABLO_CORDERO/Desktop/Practica_UVM/Quiz_VFCI/salida.daidir/.elabcomPkgFile -ssz -ssv -ssy -Lf work +disable_message+C00380+C00381 +disable_message+C00388+C00389
+uname(Linux redhat003 4.18.0-372.26.1.el8_6.x86_64 #1 SMP Sat Aug 27 02:44:20 EDT 2022 x86_64)
+[INFO] error/warning message 'C00388' has been suppressed.
+[INFO] error/warning message 'C00389' has been suppressed.
+au time 0.337991 0.243705 0.032566 delta 107630592 107630592 total 225234944 225234944
