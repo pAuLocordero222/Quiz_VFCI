@@ -38,3 +38,17 @@ class test extends uvm_test;
         repeat(10)@(posedge vif.clk)
     endtask
 endclass
+
+class test1 extends base_test;
+    `uvm_component_utils(test1)
+    function new(string name="test1", uvm_component parent=null);
+        super.new(name, parent);
+    endfunction
+
+    virtual function void build_phase(uvm_phase phase);
+    	patt = 4'b1011;
+	super.buil_phase(phase);
+	seq.randomize() with { num inside {[300:500]};};
+    endfunction
+
+endclass

@@ -16,7 +16,7 @@ module testbench;
     always #10 clk = ~clk;
     dut_if _if (clk);
 
-    det_1011 u0 (.clk(clk), .rstn(_if.rstn), .in(_if.in), .out(_if.out));
+    det_1011 u0 (.clk(clk), .rstn(_if.reset), .in(_if.in), .out(_if.out));
 
 
     initial begin
