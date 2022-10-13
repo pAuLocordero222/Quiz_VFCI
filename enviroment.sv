@@ -11,7 +11,7 @@ class enviroment extends uvm_env;
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
         age = agent::type_id::create("age", this);
-        aco = scoreboard::type_id::create("sco", this);
+        sco = scoreboard::type_id::create("sco", this);
     endfunction
 
     virtual function void connect_phase(uvm_phase phase);
